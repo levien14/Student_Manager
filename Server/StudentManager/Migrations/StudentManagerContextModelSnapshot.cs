@@ -109,6 +109,21 @@ namespace StudentManager.Migrations
                     b.ToTable("GradeStudent");
                 });
 
+            modelBuilder.Entity("StudentManager.Models.loginInfor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Password");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("loginInfor");
+                });
+
             modelBuilder.Entity("StudentManager.Models.Mark", b =>
                 {
                     b.Property<int>("Id")
