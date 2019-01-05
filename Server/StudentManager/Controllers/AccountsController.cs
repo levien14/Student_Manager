@@ -151,7 +151,36 @@ namespace StudentManager.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> AddGrade(int? id, string url)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            var grade = await _context.Grade.FindAsync(id);
+            ViewData["GradeId"] = new SelectList(_context.Grade, "Id", "GradeName");
+            ViewData["AccountId"] = id;
+            ViewData["url"] = url;
+            if (grade == null)
+            {
+                return NotFound();
+            }
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddGrade([Bind("GradeId,AccountId,JoinAt")] GradeStudent gradeStudent)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(gradeStudent);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["AccountId"] = new SelectList(_context.Account, "Id", "Email", gradeStudent.AccountId);
+            ViewData["GradeId"] = new SelectList(_context.Grade, "Id", "Id", gradeStudent.GradeId);
+            return View(gradeStudent);
+        }
         private bool AccountExists(int id)
         {
             return _context.Account.Any(e => e.Id == id);

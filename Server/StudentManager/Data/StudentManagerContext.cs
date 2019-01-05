@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using StudentManager.Models;
 
 namespace StudentManager.Models
 {
@@ -28,5 +29,6 @@ namespace StudentManager.Models
         public DbSet<StudentManager.Models.SubjectGrade> SubjectGrade { get; set; }
         public DbSet<StudentManager.Models.Role> Role { get; set; }
         public DbSet<StudentManager.Models.AccountRole> AccountRole { get; set; }
+        public DbSet<StudentManager.Models.loginInfor> loginInfor { get; set; }
     }
 }
