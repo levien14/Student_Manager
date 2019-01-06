@@ -3,7 +3,15 @@
 @{
     ViewData["Title"] = "Create";
 }
-
+<style>
+    .form-group input[type='submit'], .form-group input[type='reset'] {
+        background: #3498db;
+        color: white;
+    }
+    legend {
+        color: #3498db;
+    }
+</style>
 <h2>Create</h2>
 
 <h4>Account</h4>
@@ -15,7 +23,7 @@
             <div class="col-md-4">
                 <fieldset>
                     <legend>Personal information</legend>
-                    
+
                     <div class="form-group">
                         <label asp-for="UserName" class="control-label"></label>
                         <input asp-for="UserName" class="form-control" />
@@ -96,6 +104,6 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
+@*@section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+}*@
