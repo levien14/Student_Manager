@@ -34,7 +34,11 @@ namespace StudentManager
             });
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc()
+                .AddJsonOptions(
+            options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+        )
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<StudentManagerContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("StudentManagerContext")));

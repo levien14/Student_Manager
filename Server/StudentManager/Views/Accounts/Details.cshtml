@@ -61,10 +61,10 @@
     </dl>
 </div>
 
-@*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-      crossorigin="anonymous">*@
-<table class="table table-bordered">
+      crossorigin="anonymous">
+<table class="table">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -97,6 +97,6 @@
 </table>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="AddGrade" asp-route-id="@Model.Id">AddGrade</a> |
+    <a asp-action="AddGrade" asp-route-id="@Model.Id">Add Grade</a> |
     <a asp-action="Index">Back to List</a>
 </div>

@@ -28,8 +28,8 @@ namespace StudentManager.Controllers
         }
 
         // GET: api/Information/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetPerson([FromRoute] int id)
+        [HttpGet("infor")]
+        public async Task<IActionResult> GetPerson(int id)
         {
             if (!ModelState.IsValid)
             {
