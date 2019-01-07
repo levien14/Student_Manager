@@ -296,3 +296,9 @@ C:\Users\Admin\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreap
 C:\Users\Admin\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Details.g.cshtml.cs
 C:\Users\Admin\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Edit.g.cshtml.cs
 C:\Users\Admin\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Index.g.cshtml.cs
+C:\Users\USER\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Create.g.cshtml.cs
+C:\Users\USER\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Delete.g.cshtml.cs
+C:\Users\USER\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Details.g.cshtml.cs
+C:\Users\USER\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Edit.g.cshtml.cs
+C:\Users\USER\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Index.g.cshtml.cs
+>>>>>>> 0a2a7befcc5914089bf61923440db2f452bfcfa5

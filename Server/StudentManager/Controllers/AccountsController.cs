@@ -36,6 +36,7 @@ namespace StudentManager.Controllers
         public async Task<IActionResult> Index(string filter, int page = 1, string sortExpression = "Email")
         {
 
+
             var query = _context.Account.AsNoTracking().AsQueryable();
             if (!string.IsNullOrWhiteSpace(filter))
             {
@@ -61,9 +62,9 @@ namespace StudentManager.Controllers
 
             var account = await _context.Account
                 .Include(p => p.Person)
-                .Include(gs=> gs.GradeStudents)
+                .Include(gs => gs.GradeStudents)
                 .ThenInclude(ga => ga.Grade)
-                  
+
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (account == null)
             {
