@@ -61,10 +61,7 @@
     </dl>
 </div>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-      crossorigin="anonymous">
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -74,6 +71,7 @@
             <th scope="col">Gender</th>
             <th scope="col">Phone</th>
             <th scope="col">Grade</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -91,12 +89,15 @@
                 }
                 
             </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@Model.Id"><i class="glyphicon glyphicon-pencil"></i></a>&nbsp;
+                <a asp-action="AddGrade" asp-route-id="@Model.Id"><i class="glyphicon glyphicon-plus"></i></a>&nbsp;
+            </td>
 
         </tr>
     </tbody>
 </table>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="AddGrade" asp-route-id="@Model.Id">Add Grade</a> |
+    @*<input asp-action="Index" type="submit" value="Back to List" class="btn btn-default" />*@
     <a asp-action="Index">Back to List</a>
 </div>

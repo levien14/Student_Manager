@@ -15,7 +15,7 @@
             <div class="col-md-4">
                 <fieldset>
                     <legend>Personal information</legend>
-                    
+
                     <div class="form-group">
                         <label asp-for="UserName" class="control-label"></label>
                         <input asp-for="UserName" class="form-control" />
@@ -31,11 +31,14 @@
                         <input asp-for="Password" class="form-control" />
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
-                    </fieldset>
+                    <div class="form-group">
+                        <a asp-action="Index" class="btn btn-default" value="">Cancel</a>
+                    </div>
+                   
+                </fieldset>
             </div>
             <div class="col-md-4">
                 <fieldset>
-                    <legend>Personal information</legend>
                     <div class="form-group">
                         <label asp-for="Person.FirstName" class="control-label"></label>
                         <input asp-for="Person.FirstName" class="form-control" />
@@ -46,31 +49,17 @@
                         <input asp-for="Person.LastName" class="form-control" />
                         <span asp-validation-for="Person.LastName" class="text-danger"></span>
                     </div>
-                    <div class="form-group">
-                        <label asp-for="Person.Avatar" class="control-label"></label>
-                        <input asp-for="Person.Avatar" class="form-control" />
-                        <span asp-validation-for="Person.Avatar" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Person.BOD" class="control-label"></label>
-                        <input asp-for="Person.BOD" class="form-control" type="date" />
-                        <span asp-validation-for="Person.BOD" class="text-danger"></span>
+                    <div>
+                        <label asp-for="Person.Phone" class="control-label"></label>
+                        <input asp-for="Person.Phone" class="form-control" />
+                        <span asp-validation-for="Person.Phone" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Person.Address" class="control-label"></label>
                         <input asp-for="Person.Address" class="form-control" />
                         <span asp-validation-for="Person.Address" class="text-danger"></span>
                     </div>
-                    <div class="form-group">
-                        <label asp-for="Person.Phone" class="control-label"></label>
-                        <input asp-for="Person.Phone" class="form-control" />
-                        <span asp-validation-for="Person.Phone" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Person.Description" class="control-label"></label>
-                        <input asp-for="Person.Description" class="form-control"/>
-                        <span asp-validation-for="Person.Description" class="text-danger"></span>
-                    </div>
+
                     <div class="form-group">
                         <label asp-for="Person.Gender" class="control-label"></label>
                         <select asp-for="Person.Gender" class="form-control">
@@ -82,9 +71,29 @@
                         <span asp-validation-for="Person.Gender" class="text-danger"></span>
                     </div>
 
+                    
+                </fieldset>
+            </div>
+            <div class="col-md-4">
+                <fieldset>
                     <div class="form-group">
-                        <input type="submit" value="Create" class="btn btn-default" />
-                        <input type="reset" value="Reset" class="btn btn-default" />
+                        <label asp-for="Person.Avatar" class="control-label"></label>
+                        <input asp-for="Person.Avatar" class="form-control" />
+                        <span asp-validation-for="Person.Avatar" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Person.BOD" class="control-label"></label>
+                        <input asp-for="Person.BOD" class="form-control" type="date" />
+                        <span asp-validation-for="Person.BOD" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Person.Description" class="control-label"></label>
+                        <textarea asp-for="Person.Description" class="form-control" id="exampleFormControlTextarea1" style="height:115px"></textarea>
+                        <span asp-validation-for="Person.Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-info" />
+                        <input type="reset" value="Reset" class="btn btn-info" />
                     </div>
                 </fieldset>
             </div>
@@ -92,9 +101,6 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
