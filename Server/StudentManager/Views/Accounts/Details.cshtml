@@ -5,53 +5,67 @@
 }
 
 <h2>Details</h2>
-
+<style>
+    .avatar {
+        vertical-align: middle;
+        width: 80px;
+        height: 80px;
+        border-radius: 800%;
+    }
+</style>
 <div>
     <h4>Account</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.UserName)
+            <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar">
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
+        <dd style="margin:0,20,0,0;">
+            <b> @Html.DisplayFor(model => model.UserName)</b>
         </dd>
+        <br />
+        <hr />
         <dt>
             @Html.DisplayNameFor(model => model.Email)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Email)
         </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Password)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Password)
         </dd>
+        <br />
+
         <dt>
-            @Html.DisplayNameFor(model => model.Salt)
+            FullName
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Salt)
+            @Model.Person.FirstName @Model.Person.LastName
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.CreatedAt)
+            Address
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.CreatedAt)
+            @Model.Person.Address
+        </dd>
+
+        <dt>
+            Birthday
+        </dt>
+        <dd>
+            @Model.Person.BOD
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.UpdatedAt)
+            Phone
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.UpdatedAt)
+            @Model.Person.Phone
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DeletedAt)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DeletedAt)
-        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Status)
         </dt>
@@ -61,40 +75,6 @@
     </dl>
 </div>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-      crossorigin="anonymous">
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Address</th>
-            <th scope="col">FullName</th>
-            <th scope="col">Birthday</th>
-            <th scope="col">Gender</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Grade</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>@Model.Person.AccountId</td>
-            <td>@Model.Person.Address</td>
-            <td>@Model.Person.FirstName @Model.Person.LastName</td>
-            <td>@Model.Person.BOD</td>
-            <td>@Model.Person.Gender</td>
-            <td>@Model.Person.Phone</td>
-            <td>
-                @foreach (var sg in Model.GradeStudents)
-                {
-                    @sg.Grade.GradeName Write("  ");
-                }
-                
-            </td>
-
-        </tr>
-    </tbody>
-</table>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="AddGrade" asp-route-id="@Model.Id">Add Grade</a> |

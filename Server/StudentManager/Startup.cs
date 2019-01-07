@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using StudentManager.Models;
+using ReflectionIT.Mvc.Paging;
 
 namespace StudentManager
 {
@@ -33,6 +34,8 @@ namespace StudentManager
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddMvc();
+            services.AddPaging();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
