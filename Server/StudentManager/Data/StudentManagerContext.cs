@@ -30,5 +30,6 @@ namespace StudentManager.Models
         public DbSet<StudentManager.Models.Role> Role { get; set; }
         public DbSet<StudentManager.Models.AccountRole> AccountRole { get; set; }
         public DbSet<StudentManager.Models.loginInfor> loginInfor { get; set; }
+        public DbSet<StudentManager.Models.MyCredential> MyCredentials { get; set; }
     }
 }

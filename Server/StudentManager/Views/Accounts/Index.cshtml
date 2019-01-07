@@ -1,4 +1,7 @@
-﻿@model IEnumerable<StudentManager.Models.Account>
+﻿
+@model ReflectionIT.Mvc.Paging.PagingList<StudentManager.Models.Account>
+@using ReflectionIT.Mvc.Paging
+@addTagHelper *, ReflectionIT.Mvc.Paging
 
 @{
     ViewData["Title"] = "Index";
@@ -9,9 +12,22 @@
 <p>
     <a asp-action="Create" class="btn btn-success" title="create"><i class="glyphicon glyphicon-plus"></i></a>    
 </p>
+
 <table class="table table-bordered">
+
+
+<form method="get" class="form-inline">
+    <input name="filter" class="form-control" placeholder="filter"
+           value="@Model.RouteValue["Filter"]" />
+    <button type="submit" class="btn btn-info">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search
+    </button>
+</form>
+<br />
+<table class="table">
+
     <thead>
-        <tr>
+        <tr class="active">
             <th>
                 @Html.DisplayNameFor(model => model.UserName)
             </th>
@@ -21,25 +37,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.Password)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Salt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UpdatedAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeletedAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th></th>
+            <th>FullName</th>
         </tr>
     </thead>
     <tbody>
+
 @foreach (var item in Model) {
         <tr>
             <td>
@@ -51,21 +53,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Password)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Salt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UpdatedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DeletedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
+            
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id"><i class="glyphicon glyphicon-pencil"></i></a>&nbsp;
                 <a asp-action="Details" asp-route-id="@item.Id"><i class="glyphicon glyphicon-list-alt"></i></a>&nbsp;
@@ -73,5 +61,35 @@
             </td>
         </tr>
 }
+@*=======
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+>>>>>>> 2efe220e515fe4e3cfd9a315cc1a471dc8082c3c*@
     </tbody>
 </table>
+<nav aria-label="Suppliers navigation example">
+    <vc:pager paging-list="@Model" />
+</nav>

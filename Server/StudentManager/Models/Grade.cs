@@ -17,7 +17,7 @@ namespace StudentManager.Models
         public DateTime StartDate { get; set; }
         public List<GradeStudent> GradeStudents { get; set; }
         public List<SubjectGrade> SubjectGrades { get; set; }
-        public GradeStatus Status { get; set; }
+        public GradeStatus Status { get; set; } 
     }
     public enum GradeStatus {
         Actived = 1,

@@ -151,6 +151,28 @@ namespace StudentManager.Migrations
                     b.ToTable("Mark");
                 });
 
+            modelBuilder.Entity("StudentManager.Models.MyCredential", b =>
+                {
+                    b.Property<string>("AccessToken")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<DateTime>("DeletedAt");
+
+                    b.Property<DateTime>("ExpiredAt");
+
+                    b.Property<int>("OwnId");
+
+                    b.Property<int>("Status");
+
+                    b.Property<DateTime>("UpdatedAt");
+
+                    b.HasKey("AccessToken");
+
+                    b.ToTable("MyCredentials");
+                });
+
             modelBuilder.Entity("StudentManager.Models.Person", b =>
                 {
                     b.Property<int>("AccountId");

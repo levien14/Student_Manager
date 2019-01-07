@@ -7,6 +7,11 @@ namespace StudentManager.Models
 {
     public class Mark
     {
+        public Mark()
+        {
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
+        }
         public int Id { get; set; }
         public float Value { get; set; }
         public MarkType MarkType { get; set; }
