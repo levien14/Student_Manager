@@ -140,3 +140,8 @@ C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\obj\Debug\netcoreapp2.1\Student
 C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\obj\Debug\netcoreapp2.1\StudentManager.dll
 C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\obj\Debug\netcoreapp2.1\StudentManager.pdb
 C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\obj\Debug\netcoreapp2.1\StudentManager.csproj.CopyComplete
+C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Create.g.cshtml.cs
+C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Delete.g.cshtml.cs
+C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Details.g.cshtml.cs
+C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Edit.g.cshtml.cs
+C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Index.g.cshtml.cs

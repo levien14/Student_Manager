@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -21,8 +22,9 @@ namespace StudentManager.Controllers
 
 
         // GET: Authentication/Create
-        public IActionResult login()
+        public IActionResult login(string redirectUrl)
         {
+            
             return View();
         }
 
@@ -36,20 +38,21 @@ namespace StudentManager.Controllers
             var existlogin = _context.Account.SingleOrDefault(ac => ac.Email == loginInfor.Email);
             if (existlogin == null)
             {
-                return new JsonResult("Khong co Email");
+                return new JsonResult("Thông Tin Đăng Nhập Không Chính xác");
             }
             if (existlogin.Password == loginInfor.Password)
             {
                 var checkroll = _context.AccountRole.SingleOrDefault(ar => ar.AccountId == existlogin.Id);
                 if (checkroll == null)
                 {
-                    return new JsonResult("Ban Khong co quyen");
+                    return new JsonResult("Thông Tin Đăng Nhập Không Chính xác");
                 }
-                return Json("Ok");
+                HttpContext.Session.SetString("currentLogin", existlogin.Email);
+                return Redirect("/Home");
             }
             else
             {
-                return new JsonResult("dung pass roi");
+                return new JsonResult("Thông Tin Đăng Nhập Không Chính xác");
             }
             return new JsonResult("aa");
 
