@@ -226,9 +226,88 @@ using StudentManager.Models;
             BeginContext(1750, 47, true);
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
+<<<<<<< HEAD
             BeginContext(1797, 75, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ac7f5d005bb455a973eb45b7dc58a31", async() => {
                 BeginContext(1864, 4, true);
+=======
+            BeginContext(2063, 22, false);
+#line 81 "C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\Views\Accounts\Details.cshtml"
+           Write(Model.Person.FirstName);
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(2085, 1, true);
+            WriteLiteral(" ");
+            EndContext();
+            BeginContext(2087, 21, false);
+#line 81 "C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\Views\Accounts\Details.cshtml"
+                                   Write(Model.Person.LastName);
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(2108, 23, true);
+            WriteLiteral("</td>\r\n            <td>");
+            EndContext();
+            BeginContext(2132, 16, false);
+#line 82 "C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\Views\Accounts\Details.cshtml"
+           Write(Model.Person.BOD);
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(2148, 23, true);
+            WriteLiteral("</td>\r\n            <td>");
+            EndContext();
+            BeginContext(2172, 19, false);
+#line 83 "C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\Views\Accounts\Details.cshtml"
+           Write(Model.Person.Gender);
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(2191, 23, true);
+            WriteLiteral("</td>\r\n            <td>");
+            EndContext();
+            BeginContext(2215, 18, false);
+#line 84 "C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\Views\Accounts\Details.cshtml"
+           Write(Model.Person.Phone);
+
+#line default
+#line hidden
+            EndContext();
+            BeginContext(2233, 25, true);
+            WriteLiteral("</td>\r\n            <td>\r\n");
+            EndContext();
+#line 86 "C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\Views\Accounts\Details.cshtml"
+                 foreach (var sg in Model.GradeStudents)
+                {
+                    
+
+#line default
+#line hidden
+            BeginContext(2356, 18, false);
+#line 88 "C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\Views\Accounts\Details.cshtml"
+               Write(sg.Grade.GradeName);
+
+#line default
+#line hidden
+            EndContext();
+#line 88 "C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\Views\Accounts\Details.cshtml"
+                                        Write("  ");
+                }
+
+#line default
+#line hidden
+            BeginContext(2408, 89, true);
+            WriteLiteral("                \r\n            </td>\r\n\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n<div>\r\n    ");
+            EndContext();
+            BeginContext(2497, 54, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f67657bf8504432196a273143d740ff9", async() => {
+                BeginContext(2543, 4, true);
+>>>>>>> f7fb4d50cd92c2c25435ba7d5ebc4c327785c431
                 WriteLiteral("Edit");
                 EndContext();
             }
@@ -262,9 +341,15 @@ using StudentManager.Models;
             BeginContext(1872, 7, true);
             WriteLiteral(" \r\n    ");
             EndContext();
+<<<<<<< HEAD
             BeginContext(1879, 84, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "73db7dd6340c4a1aaf8d490464b33289", async() => {
                 BeginContext(1950, 9, true);
+=======
+            BeginContext(2559, 63, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c684ef93c334b40872f6947c4c8ecd9", async() => {
+                BeginContext(2609, 9, true);
+>>>>>>> f7fb4d50cd92c2c25435ba7d5ebc4c327785c431
                 WriteLiteral("Add Grade");
                 EndContext();
             }
@@ -298,9 +383,15 @@ using StudentManager.Models;
             BeginContext(1963, 7, true);
             WriteLiteral(" \r\n    ");
             EndContext();
+<<<<<<< HEAD
             BeginContext(1970, 59, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c01b4168646145ad876cd524fd753ac0", async() => {
                 BeginContext(2013, 12, true);
+=======
+            BeginContext(2630, 38, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8d9d5c1ad4fe4f4aae4e1c820d2d350d", async() => {
+                BeginContext(2652, 12, true);
+>>>>>>> f7fb4d50cd92c2c25435ba7d5ebc4c327785c431
                 WriteLiteral("Back to List");
                 EndContext();
             }

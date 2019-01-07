@@ -40,7 +40,7 @@ namespace StudentManager.Controllers
             {
                 if (login.Password == existLogin.Password)
                 {
-                    
+
                     MyCredential credential = new MyCredential(existLogin.Id);
                     credential.Status = MyCredentialStatus.Actived;
                     _context.Add(credential);
@@ -65,61 +65,71 @@ namespace StudentManager.Controllers
 
         // GET: api/Information/5
         [HttpGet("infor")]
-        public async Task<IActionResult> GetPerson(int id)
+        public async Task<IActionResult> Information()
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
-            var person = _context.Person.Include(ac => ac.Account)                
-                .SingleOrDefault(p=>p.AccountId==id);
-
-            if (person == null)
+            var basicToken = Request.Headers["Authorization"].ToString();
+            var token = basicToken.Replace("Basic ", "");
+            var existToken = _context.MyCredentials.SingleOrDefault(a => a.AccessToken == token);
+            if (existToken != null)
             {
-                return NotFound();
-            }
-
-            return new JsonResult(person);
-        }
-
-        // PUT: api/Information/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutPerson([FromRoute] int id, [FromBody] Person person)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != person.AccountId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(person).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PersonExists(id))
+                var existInfor = _context.Person
+                    .Include(ac => ac.Account)
+                 .ThenInclude(g => g.GradeStudents)
+                  .ThenInclude(ag => ag.Grade)
+                    .SingleOrDefault(i => i.AccountId == existToken.OwnId);
+                if (existInfor != null)
                 {
-                    return NotFound();
+                    return new JsonResult(existInfor);
                 }
                 else
                 {
-                    throw;
+                    return Forbid();
                 }
             }
+            return Forbid();
+        }
+        [HttpPost("change-information")]
+        public async Task<IActionResult> ChangeInformation(Person person)
+        {
+            if (!ModelState.IsValid)
+            {
+                return new JsonResult("BadRequest");
+            }
+            var basicToken = Request.Headers["Authorization"].ToString();
+            var token = basicToken.Replace("Basic ", "");
+            var existToken = _context.MyCredentials.SingleOrDefault(a => a.AccessToken == token);
+            if (existToken != null)
+            {
+                var existAccount = _context.Person.SingleOrDefault(i => i.AccountId == existToken.OwnId);
 
-            return NoContent();
+                if (existAccount != null)
+                {
+                    existAccount.AccountId = existToken.OwnId;
+                    existAccount.Address = person.Address;
+                    existAccount.FirstName = person.FirstName;
+                    existAccount.LastName = person.LastName;
+                    existAccount.Avatar = person.Avatar;
+                    existAccount.Phone = person.Phone;
+                    existAccount.BOD = person.BOD;
+                    existAccount.Gender = person.Gender;
+                    existAccount.Description = person.Description;
+                    _context.Person.Update(existAccount);
+                    _context.SaveChanges();
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    return new JsonResult(existAccount);
+                }
+                return new JsonResult(existAccount);
+            }
+            Response.StatusCode = (int)HttpStatusCode.Forbidden;
+            return new JsonResult("Forbidden");
         }
 
-       // POST: api/Information
-       [HttpGet("checkToken")]
+        // POST: api/Information
+        [HttpGet("checkToken")]
         public async Task<IActionResult> checkToken(string tokenKey)
         {
             var token = _context.MyCredentials.SingleOrDefault(t => t.AccessToken == tokenKey);
@@ -130,7 +140,32 @@ namespace StudentManager.Controllers
             }
             return StatusCode(403);
         }
-        
+        //[HttpGet("Grade")]
+        //public async Task<IActionResult> Grade()
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+        //    var basicToken = Request.Headers["Authorization"].ToString();
+        //    var token = basicToken.Replace("Basic ", "");
+        //    var existToken = _context.MyCredentials.SingleOrDefault(a => a.AccessToken == token);
+        //    if (existToken != null)
+        //    {
+        //        var existInfor = _context.Account
+        //            .SingleOrDefault(i => i.Id == existToken.OwnId);
+        //        if (existInfor != null)
+        //        {
+        //            var grade = _context.Grade
+        //            return new JsonResult(existInfor);
+        //        }
+        //        else
+        //        {
+        //            return Forbid();
+        //        }
+        //    }
+        //    return Forbid();
+        //}
         private bool PersonExists(int id)
         {
             return _context.Person.Any(e => e.AccountId == id);

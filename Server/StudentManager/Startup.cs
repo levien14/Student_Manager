@@ -34,6 +34,14 @@ namespace StudentManager
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                // Set a short timeout for easy testing.
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+            });
 
             services.AddPaging();
             services.AddMvc()
@@ -62,6 +70,7 @@ namespace StudentManager
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSession();
             app.UseWhen(context => context.Request.Path.StartsWithSegments("/api/student/infor"), HandleMapcheckToken);
             app.UseMvc(routes =>
             {

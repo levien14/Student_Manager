@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Routing;
@@ -19,10 +20,22 @@ namespace StudentManager.Controllers
         {
             _context = context;
         }
+        public bool checkSession()
+        {
+            var ck = false;
+            string currentLogin = HttpContext.Session.GetString("currentLogin");
 
+            if (currentLogin == null)
+            {
+                ck = true;
+            }
+
+            return (ck);
+        }
         // GET: Accounts
         public async Task<IActionResult> Index(string filter, int page = 1, string sortExpression = "Email")
         {
+<<<<<<< HEAD
             
             var query = _context.Account.AsNoTracking().AsQueryable();
             if (!string.IsNullOrWhiteSpace(filter))
@@ -36,6 +49,19 @@ namespace StudentManager.Controllers
         { "filter", filter}
     };
             return View(model);
+=======
+            if (this.checkSession())
+            {
+                Response.StatusCode = 403;
+
+                return Redirect("/Authentication/Login");
+            }
+            return View(await _context.Account
+                .Include(p=>p.Person)
+                .Include(gr=>gr.GradeStudents)
+                    .ThenInclude(g=>g.Grade)
+                .ToListAsync());
+>>>>>>> f7fb4d50cd92c2c25435ba7d5ebc4c327785c431
         }
 
         // GET: Accounts/Details/5
