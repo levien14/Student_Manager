@@ -10,6 +10,7 @@ namespace StudentManager.Models
     {
         public Account()
         {
+            this.Salt = Guid.NewGuid().ToString();
             CreatedAt = DateTime.Now;
             UpdatedAt = DateTime.Now;
             DeletedAt = DateTime.Now;

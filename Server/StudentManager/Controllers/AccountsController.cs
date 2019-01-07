@@ -21,7 +21,11 @@ namespace StudentManager.Controllers
         // GET: Accounts
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Account.ToListAsync());
+            return View(await _context.Account
+                .Include(p=>p.Person)
+                .Include(gr=>gr.GradeStudents)
+                    .ThenInclude(g=>g.Grade)
+                .ToListAsync());
         }
 
         // GET: Accounts/Details/5
@@ -103,6 +107,7 @@ namespace StudentManager.Controllers
             {
                 try
                 {
+
                     _context.Person.Update(account.Person);
                     _context.Update(account);
                     await _context.SaveChangesAsync();

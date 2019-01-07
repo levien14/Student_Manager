@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using StudentManager.Models;
+using StudentManager.MineMiddewera;
 
 namespace StudentManager
 {
@@ -60,13 +61,17 @@ namespace StudentManager
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseWhen(context => context.Request.Path.StartsWithSegments("/api/student/infor"), HandleMapcheckToken);
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+        public static void HandleMapcheckToken(IApplicationBuilder app)
+        {
+            app.checkToken();
         }
     }
 }
