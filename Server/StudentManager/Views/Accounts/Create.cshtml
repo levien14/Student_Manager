@@ -10,11 +10,11 @@
 <hr />
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="Create">
+        <form asp-action="Create" >
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="col-md-4">
                 <fieldset>
-                    <legend>Personal information</legend>
+                    <legend>Basic information</legend>
                     
                     <div class="form-group">
                         <label asp-for="UserName" class="control-label"></label>
@@ -83,8 +83,8 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" value="Create" class="btn btn-default" />
-                        <input type="reset" value="Reset" class="btn btn-default" />
+                        <input type="submit" value="Create" class="btn btn-success" />
+                        <input type="reset" value="Reset" class="btn btn-danger" />
                     </div>
                 </fieldset>
             </div>
@@ -93,7 +93,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-info">Back to List</a>
 </div>
 
 @section Scripts {

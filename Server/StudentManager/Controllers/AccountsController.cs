@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
+using ReflectionIT.Mvc.Paging;
 using StudentManager.Models;
 
 namespace StudentManager.Controllers
@@ -19,13 +21,21 @@ namespace StudentManager.Controllers
         }
 
         // GET: Accounts
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string filter, int page = 1, string sortExpression = "Email")
         {
-            return View(await _context.Account
-                .Include(p=>p.Person)
-                .Include(gr=>gr.GradeStudents)
-                    .ThenInclude(g=>g.Grade)
-                .ToListAsync());
+            
+            var query = _context.Account.AsNoTracking().AsQueryable();
+            if (!string.IsNullOrWhiteSpace(filter))
+            {
+                query = query.Where(p => p.Email.Contains(filter)
+                || p.UserName.Contains(filter));
+
+            }
+            var model = await PagingList.CreateAsync(query, 3, page, sortExpression, "Email");
+            model.RouteValue = new RouteValueDictionary {
+        { "filter", filter}
+    };
+            return View(model);
         }
 
         // GET: Accounts/Details/5
@@ -137,6 +147,9 @@ namespace StudentManager.Controllers
             }
 
             var account = await _context.Account
+                 .Include(p => p.Person)
+                .Include(gs => gs.GradeStudents)
+                .ThenInclude(ga => ga.Grade)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (account == null)
             {
