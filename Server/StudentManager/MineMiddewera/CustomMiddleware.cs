@@ -36,7 +36,7 @@ namespace StudentManager.MineMiddewera
                 var basicToken = context.Request.Headers["Authorization"].ToString();
                 basicToken = basicToken.Replace("Basic ", "");
                 HttpClient httpClient = new HttpClient();
-                HttpResponseMessage message = httpClient.GetAsync("https://localhost:44310/api/student/checkToken?tokenKey=" + basicToken).Result;
+                HttpResponseMessage message = httpClient.GetAsync("https://studentmanager20190107033227.azurewebsites.net/api/student/checkToken?tokenKey=" + basicToken).Result;
                 if (message.StatusCode == HttpStatusCode.OK)
                 {
                     IsValid = true;
