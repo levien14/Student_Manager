@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@{
+    var checkSession = ViewData["currentLogin"];
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -34,10 +38,18 @@
                     <li><a asp-area="" asp-controller="Accounts" asp-action="index">Account</a></li>
                     <li><a asp-area="" asp-controller="Grades" asp-action="index">Greade</a></li>
                     <li><a asp-area="" asp-controller="Subjects" asp-action="index">Subject</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Mark</a></li>
+                    <li><a asp-area="" asp-controller="Marks" asp-action="index">Mark</a></li>
                 </ul>
                 <ul class="nav navbar-nav" style="float:right">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact" class=" glyphicon glyphicon-log-in">Login/Logout</a></li>
+
+                    @if (checkSession == null)
+                    {
+                        <li><a asp-area="" asp-controller="Authentication" asp-action="login" class=" glyphicon glyphicon-log-in">Login</a></li>
+                    }
+                    else
+                    {
+                     <li> <a asp-area="" asp-controller="Authentication" asp-action="logout" class=" glyphicon glyphicon-log-in">@Context.Session.GetString("currentLogin") | LogOut</a></li>
+                    }
                 </ul>
             </div>
         </div>

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Routing;
@@ -25,7 +27,7 @@ namespace StudentManager.Controllers
             var ck = false;
             string currentLogin = HttpContext.Session.GetString("currentLogin");
 
-            if (currentLogin == null)
+            if (currentLogin != null)
             {
                 ck = true;
             }
@@ -35,8 +37,10 @@ namespace StudentManager.Controllers
         // GET: Accounts
         public async Task<IActionResult> Index(string filter, int page = 1, string sortExpression = "Email")
         {
-
-
+            if (checkSession() == false)
+            {
+               return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             var query = _context.Account.AsNoTracking().AsQueryable();
             if (!string.IsNullOrWhiteSpace(filter))
             {
@@ -55,6 +59,10 @@ namespace StudentManager.Controllers
         // GET: Accounts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             if (id == null)
             {
                 return NotFound();
@@ -77,6 +85,10 @@ namespace StudentManager.Controllers
         // GET: Accounts/Create
         public IActionResult Create()
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             return View();
         }
 
@@ -89,6 +101,8 @@ namespace StudentManager.Controllers
         {
             if (ModelState.IsValid)
             {
+                account.GenerateSalt();
+                account.EncrytPassword();
                 _context.Person.Add(account.Person);
                 _context.Add(account);
                 await _context.SaveChangesAsync();
@@ -100,6 +114,11 @@ namespace StudentManager.Controllers
         // GET: Accounts/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
+            
             if (id == null)
             {
                 return NotFound();
@@ -155,6 +174,10 @@ namespace StudentManager.Controllers
         // GET: Accounts/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             if (id == null)
             {
                 return NotFound();
@@ -185,6 +208,10 @@ namespace StudentManager.Controllers
         }
         public async Task<IActionResult> AddGrade(int? id, string url)
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             if (id == null)
             {
                 return NotFound();
