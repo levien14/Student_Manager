@@ -35,8 +35,8 @@ namespace StudentManager.Controllers
         // GET: Accounts
         public async Task<IActionResult> Index(string filter, int page = 1, string sortExpression = "Email")
         {
-<<<<<<< HEAD
-            
+
+
             var query = _context.Account.AsNoTracking().AsQueryable();
             if (!string.IsNullOrWhiteSpace(filter))
             {
@@ -49,19 +49,6 @@ namespace StudentManager.Controllers
         { "filter", filter}
     };
             return View(model);
-=======
-            if (this.checkSession())
-            {
-                Response.StatusCode = 403;
-
-                return Redirect("/Authentication/Login");
-            }
-            return View(await _context.Account
-                .Include(p=>p.Person)
-                .Include(gr=>gr.GradeStudents)
-                    .ThenInclude(g=>g.Grade)
-                .ToListAsync());
->>>>>>> f7fb4d50cd92c2c25435ba7d5ebc4c327785c431
         }
 
         // GET: Accounts/Details/5
@@ -74,9 +61,9 @@ namespace StudentManager.Controllers
 
             var account = await _context.Account
                 .Include(p => p.Person)
-                .Include(gs=> gs.GradeStudents)
+                .Include(gs => gs.GradeStudents)
                 .ThenInclude(ga => ga.Grade)
-                  
+
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (account == null)
             {

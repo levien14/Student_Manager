@@ -81,15 +81,9 @@ using ReflectionIT.Mvc.Paging;
             BeginContext(193, 29, true);
             WriteLiteral("\r\n<h2>Index</h2>\r\n\r\n<p>\r\n    ");
             EndContext();
-<<<<<<< HEAD
             BeginContext(222, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4f92deb253df480684e71926a0b0f94a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1615eabd0db54f0ab6654691f1b1b238", async() => {
                 BeginContext(245, 10, true);
-=======
-            BeginContext(123, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da5827b1c4141c0a6edb30d01cc07dd", async() => {
-                BeginContext(146, 10, true);
->>>>>>> f7fb4d50cd92c2c25435ba7d5ebc4c327785c431
                 WriteLiteral("Create New");
                 EndContext();
             }
@@ -110,7 +104,7 @@ using ReflectionIT.Mvc.Paging;
             WriteLiteral("\r\n</p>\r\n\r\n");
             EndContext();
             BeginContext(269, 315, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1bfc317a0ecd4c8499e855906f20a695", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7c25b6376a34b0ab394764bd8d5b633", async() => {
                 BeginContext(308, 68, true);
                 WriteLiteral("\r\n    <input name=\"filter\" class=\"form-control\" placeholder=\"filter\"");
                 EndContext();
@@ -233,15 +227,9 @@ WriteAttributeValue("", 396, Model.RouteValue["Filter"], 396, 27, false);
             BeginContext(1610, 69, true);
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n\r\n                    ");
             EndContext();
-<<<<<<< HEAD
             BeginContext(1679, 77, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ffe9518d67ef48ad8a1b1f76c2974ecb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a8a89171a3c4d4098b9e94cf623a899", async() => {
                 BeginContext(1748, 4, true);
-=======
-            BeginContext(1362, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "edc7f0ba304a4ac385b7a2c545c41dcd", async() => {
-                BeginContext(1407, 4, true);
->>>>>>> f7fb4d50cd92c2c25435ba7d5ebc4c327785c431
                 WriteLiteral("Edit");
                 EndContext();
             }
@@ -275,15 +263,9 @@ WriteAttributeValue("", 396, Model.RouteValue["Filter"], 396, 27, false);
             BeginContext(1756, 24, true);
             WriteLiteral("\r\n\r\n                    ");
             EndContext();
-<<<<<<< HEAD
             BeginContext(1780, 83, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72e6cd14559d457e91e8581de7a92cec", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae94a30564c24daa89d2a4dd25824589", async() => {
                 BeginContext(1852, 7, true);
-=======
-            BeginContext(1435, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "52f5664e41ff4012ba7bc3890f92c5ca", async() => {
-                BeginContext(1483, 7, true);
->>>>>>> f7fb4d50cd92c2c25435ba7d5ebc4c327785c431
                 WriteLiteral("Details");
                 EndContext();
             }
@@ -317,15 +299,9 @@ WriteAttributeValue("", 396, Model.RouteValue["Filter"], 396, 27, false);
             BeginContext(1863, 22, true);
             WriteLiteral("\r\n                    ");
             EndContext();
-<<<<<<< HEAD
             BeginContext(1885, 80, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c26e822e88384b7aa43589eff923221e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c926ffaabd5f415a94df83820a63518e", async() => {
                 BeginContext(1955, 6, true);
-=======
-            BeginContext(1514, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "95933ca33647466abddeae97d64590c5", async() => {
-                BeginContext(1561, 6, true);
->>>>>>> f7fb4d50cd92c2c25435ba7d5ebc4c327785c431
                 WriteLiteral("Delete");
                 EndContext();
             }
@@ -368,7 +344,7 @@ WriteAttributeValue("", 396, Model.RouteValue["Filter"], 396, 27, false);
             WriteLiteral("    </tbody>\r\n</table>\r\n<nav aria-label=\"Suppliers navigation example\">\r\n    ");
             EndContext();
             BeginContext(2097, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:pager", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "2ed5431521294b1183f6e19db6a72460", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:pager", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "da14cdb2df684c9fb615f8c36def1ef9", async() => {
             }
             );
             __PagerViewComponentTagHelper = CreateTagHelper<global::AspNetCore.Views_Accounts_Index.__Generated__PagerViewComponentTagHelper>();

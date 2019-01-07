@@ -273,15 +273,9 @@ using StudentManager.Models;
             BeginContext(2778, 72, true);
             WriteLiteral("                    </tbody>\r\n                </table>\r\n                ");
             EndContext();
-<<<<<<< HEAD
             BeginContext(2850, 78, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c1cdb434e3d48548d852f82a728f77c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7ead19abcdc945239a890d9c103a0819", async() => {
                 BeginContext(2920, 4, true);
-=======
-            BeginContext(1041, 54, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a0e0691a2c114b2aac0a9b560d93248d", async() => {
-                BeginContext(1087, 4, true);
->>>>>>> f7fb4d50cd92c2c25435ba7d5ebc4c327785c431
                 WriteLiteral("Edit");
                 EndContext();
             }
@@ -315,15 +309,9 @@ using StudentManager.Models;
             BeginContext(2928, 18, true);
             WriteLiteral("\r\n                ");
             EndContext();
-<<<<<<< HEAD
             BeginContext(2946, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9459f3de11434ebeb7524ee1bd46ad10", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e7eba66993784003a0a30cfeb4a4f3c3", async() => {
                 BeginContext(2991, 12, true);
-=======
-            BeginContext(1103, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c39a9d7090e24a508ccef211eef44d2e", async() => {
-                BeginContext(1125, 12, true);
->>>>>>> f7fb4d50cd92c2c25435ba7d5ebc4c327785c431
                 WriteLiteral("Back to List");
                 EndContext();
             }

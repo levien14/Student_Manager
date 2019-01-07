@@ -219,3 +219,8 @@ C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\V
 C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Edit.g.cshtml.cs
 C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Index.g.cshtml.cs
 >>>>>>> f7fb4d50cd92c2c25435ba7d5ebc4c327785c431
+C:\Users\USER\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Create.g.cshtml.cs
+C:\Users\USER\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Delete.g.cshtml.cs
+C:\Users\USER\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Details.g.cshtml.cs
+C:\Users\USER\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Edit.g.cshtml.cs
+C:\Users\USER\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Marks\Index.g.cshtml.cs
