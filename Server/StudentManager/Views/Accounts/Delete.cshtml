@@ -3,7 +3,11 @@
 @{
     ViewData["Title"] = "Delete";
 }
-
+<style>
+    h3{
+        color:red;
+    }
+</style>
 <h2>Delete</h2>
 <style>
     .avatar {
@@ -15,7 +19,6 @@
 </style>
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Account</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -82,8 +85,10 @@
     </dl>
 
     <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" class="btn btn-info" />
-        <input type="submit" value="Delete" class="btn btn-info" /> 
-        <a asp-action="Index" class="btn btn-info">Back to List</a>
+
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> &nbsp;
+        <input asp-action="Index" type="submit" value="Cancel" class="btn" />
+
     </form>
 </div>

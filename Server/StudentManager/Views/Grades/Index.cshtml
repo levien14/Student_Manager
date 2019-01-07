@@ -7,9 +7,11 @@
 <h2>Index</h2>
 
 <p>
-    <a asp-action="Create" class="btn btn-danger">Create New</a>
+
+    <a asp-action="Create" class="btn btn-success" title="create"><i class="glyphicon glyphicon-plus"></i></a>
+        
 </p>
-<table class="table">
+<table class="table ">
     <thead>
         <tr class="warning">
             <th>
@@ -40,18 +42,20 @@
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                @foreach(var s in item.SubjectGrades)
+                @foreach (var s in item.SubjectGrades)
                 {
                     @s.Subject.Name
                 }
-               
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">Edit</a> 
-                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a> 
-                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-info">Delete</a> 
-                <a asp-action="AddSubject" asp-route-id="@item.Id" class="btn btn-info">AddSubject</a>
+
+                <a asp-action="Edit" asp-route-id="@item.Id"><i class="glyphicon glyphicon-pencil"></i></a>&nbsp;
+                <a asp-action="Details" asp-route-id="@item.Id"><i class="glyphicon glyphicon-list-alt"></i></a>&nbsp;
+                <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger ml-1"><i class="glyphicon glyphicon-trash"></i></a>&nbsp;
+                <a asp-action="AddSubject" asp-route-id="@item.Id" ><i class="glyphicon glyphicon-plus"></i></a>
+
             </td>
+                
         </tr>
        
 }

@@ -49,6 +49,7 @@ namespace StudentManager.Controllers
         { "filter", filter}
     };
             return View(model);
+
         }
 
         // GET: Accounts/Details/5

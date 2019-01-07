@@ -31,8 +31,13 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Accounts" asp-action="index">Account</a></li>
+                    <li><a asp-area="" asp-controller="Grades" asp-action="index">Greade</a></li>
+                    <li><a asp-area="" asp-controller="Subjects" asp-action="index">Subject</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Mark</a></li>
+                </ul>
+                <ul class="nav navbar-nav" style="float:right">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact" class=" glyphicon glyphicon-log-in">Login/Logout</a></li>
                 </ul>
             </div>
         </div>

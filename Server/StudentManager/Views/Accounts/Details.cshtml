@@ -82,8 +82,46 @@
         </dd>
     </dl>
 </div>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Address</th>
+            <th scope="col">FullName</th>
+            <th scope="col">Birthday</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Grade</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Person.AccountId</td>
+            <td>@Model.Person.Address</td>
+            <td>@Model.Person.FirstName @Model.Person.LastName</td>
+            <td>@Model.Person.BOD</td>
+            <td>@Model.Person.Gender</td>
+            <td>@Model.Person.Phone</td>
+            <td>
+                @foreach (var sg in Model.GradeStudents)
+                {
+                    @sg.Grade.GradeName Write("  ");
+                }
+                
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@Model.Id"><i class="glyphicon glyphicon-pencil"></i></a>&nbsp;
+                <a asp-action="AddGrade" asp-route-id="@Model.Id"><i class="glyphicon glyphicon-plus"></i></a>&nbsp;
+            </td>
+
+        </tr>
+    </tbody>
+</table>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-info">Edit</a> 
-    <a asp-action="AddGrade" asp-route-id="@Model.Id" class="btn btn-info">Add Grade</a> 
-    <a asp-action="Index" class="btn btn-info">Back to List</a>
+    @*<input asp-action="Index" type="submit" value="Back to List" class="btn btn-default" />*@
+    <a asp-action="Index">Back to List</a>
+
 </div>
