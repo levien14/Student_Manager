@@ -69,7 +69,7 @@ using StudentManager.Models;
             WriteLiteral("\r\n<h2>Subjects</h2>\r\n\r\n<p>\r\n\r\n    ");
             EndContext();
             BeginContext(128, 106, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "01ee7fabdd3e4577ad7df327ffe9a17c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "791f68fd6d7d4fef801efc059601d4e9", async() => {
                 BeginContext(190, 40, true);
                 WriteLiteral("<i class=\"glyphicon glyphicon-plus\"></i>");
                 EndContext();
@@ -161,7 +161,7 @@ using StudentManager.Models;
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(1046, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d49aef88bb744cfa83e547f6701a2c6a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "88b17e9ed6ee4976a25ae716a53b5aaa", async() => {
                 BeginContext(1091, 42, true);
                 WriteLiteral("<i class=\"glyphicon glyphicon-pencil\"></i>");
                 EndContext();
@@ -196,7 +196,7 @@ using StudentManager.Models;
             WriteLiteral("&nbsp;\r\n                ");
             EndContext();
             BeginContext(1161, 96, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "be7e5c8228bd40b095897e9d001e2f02", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c80164958e54447da39869d6ef191fce", async() => {
                 BeginContext(1209, 44, true);
                 WriteLiteral("<i class=\"glyphicon glyphicon-list-alt\"></i>");
                 EndContext();
@@ -231,7 +231,7 @@ using StudentManager.Models;
             WriteLiteral("&nbsp;\r\n                ");
             EndContext();
             BeginContext(1281, 117, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e2408121e25f49219f421a12b24e85bf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "740b48c2885348cf89cd7d449b7df7e0", async() => {
                 BeginContext(1353, 41, true);
                 WriteLiteral("<i class=\"glyphicon glyphicon-trash\"></i>");
                 EndContext();

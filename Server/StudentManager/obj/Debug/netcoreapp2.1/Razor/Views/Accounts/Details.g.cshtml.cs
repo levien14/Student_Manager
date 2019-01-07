@@ -340,7 +340,7 @@ using StudentManager.Models;
             WriteLiteral("                \r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(2754, 92, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da47eb2ff3324f139a398b7c81cbc341", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3edd52e948d64ce2888e2d0698ac4e39", async() => {
                 BeginContext(2800, 42, true);
                 WriteLiteral("<i class=\"glyphicon glyphicon-pencil\"></i>");
                 EndContext();
@@ -375,7 +375,7 @@ using StudentManager.Models;
             WriteLiteral("&nbsp;\r\n                ");
             EndContext();
             BeginContext(2870, 94, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63ac383e5102448db9a66ac53b0cdd17", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae7b719a593748a5a1880e7d2699712d", async() => {
                 BeginContext(2920, 40, true);
                 WriteLiteral("<i class=\"glyphicon glyphicon-plus\"></i>");
                 EndContext();
@@ -413,7 +413,7 @@ using StudentManager.Models;
             WriteLiteral("    ");
             EndContext();
             BeginContext(3140, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "caee212214b349279768c971cdf28a45", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0b6641e059d045fd911e5dc64ca20cdc", async() => {
                 BeginContext(3162, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();
