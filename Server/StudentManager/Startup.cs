@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using StudentManager.Models;
 using StudentManager.MineMiddewera;
+using ReflectionIT.Mvc.Paging;
 
 namespace StudentManager
 {
@@ -42,7 +43,7 @@ namespace StudentManager
                 options.Cookie.HttpOnly = true;
             });
 
-
+            services.AddPaging();
             services.AddMvc()
                 .AddJsonOptions(
             options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
