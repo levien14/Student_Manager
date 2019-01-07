@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +15,18 @@ namespace StudentManager.Controllers
     public class SubjectsController : Controller
     {
         private readonly StudentManagerContext _context;
+        public bool checkSession()
+        {
+            var ck = false;
+            string currentLogin = HttpContext.Session.GetString("currentLogin");
 
+            if (currentLogin != null)
+            {
+                ck = true;
+            }
+
+            return (ck);
+        }
         public SubjectsController(StudentManagerContext context)
         {
             _context = context;
@@ -21,12 +35,20 @@ namespace StudentManager.Controllers
         // GET: Subjects
         public async Task<IActionResult> Index()
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             return View(await _context.Subject.ToListAsync());
         }
 
         // GET: Subjects/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             if (id == null)
             {
                 return NotFound();
@@ -45,6 +67,10 @@ namespace StudentManager.Controllers
         // GET: Subjects/Create
         public IActionResult Create()
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             return View();
         }
 
@@ -55,6 +81,10 @@ namespace StudentManager.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Description,Status")] Subject subject)
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(subject);
@@ -67,6 +97,10 @@ namespace StudentManager.Controllers
         // GET: Subjects/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             if (id == null)
             {
                 return NotFound();
@@ -118,6 +152,10 @@ namespace StudentManager.Controllers
         // GET: Subjects/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             if (id == null)
             {
                 return NotFound();

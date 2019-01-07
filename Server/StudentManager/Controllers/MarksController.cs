@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +15,18 @@ namespace StudentManager.Controllers
     public class MarksController : Controller
     {
         private readonly StudentManagerContext _context;
+        public bool checkSession()
+        {
+            var ck = false;
+            string currentLogin = HttpContext.Session.GetString("currentLogin");
 
+            if (currentLogin != null)
+            {
+                ck = true;
+            }
+
+            return (ck);
+        }
         public MarksController(StudentManagerContext context)
         {
             _context = context;
@@ -21,6 +35,10 @@ namespace StudentManager.Controllers
         // GET: Marks
         public async Task<IActionResult> Index()
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             var studentManagerContext = _context.Mark.Include(m => m.Account).Include(m => m.Subject);
             return View(await studentManagerContext.ToListAsync());
         }
@@ -28,6 +46,10 @@ namespace StudentManager.Controllers
         // GET: Marks/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             if (id == null)
             {
                 return NotFound();
@@ -48,6 +70,10 @@ namespace StudentManager.Controllers
         // GET: Marks/Create
         public IActionResult Create()
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             ViewData["AccountId"] = new SelectList(_context.Account, "Id", "Email");
             ViewData["SubjectId"] = new SelectList(_context.Subject, "Id", "Name");
             return View();
@@ -74,6 +100,10 @@ namespace StudentManager.Controllers
         // GET: Marks/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             if (id == null)
             {
                 return NotFound();
@@ -129,6 +159,10 @@ namespace StudentManager.Controllers
         // GET: Marks/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             if (id == null)
             {
                 return NotFound();

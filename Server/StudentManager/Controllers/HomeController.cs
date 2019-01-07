@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using StudentManager.Models;
 
@@ -10,6 +11,7 @@ namespace StudentManager.Controllers
 {
     public class HomeController : Controller
     {
+         
         public IActionResult Index()
         {
             return View();
@@ -17,8 +19,9 @@ namespace StudentManager.Controllers
 
         public IActionResult About()
         {
+            ViewData["Login"] = HttpContext.Session.GetString("currentLogin");
             ViewData["Message"] = "Your application description page.";
-
+            
             return View();
         }
 

@@ -24,7 +24,7 @@ namespace StudentManager.Controllers
         // GET: Authentication/Create
         public IActionResult login(string redirectUrl)
         {
-            
+            ViewData["redirectUrl"] = redirectUrl;
             return View();
         }
 
@@ -33,7 +33,7 @@ namespace StudentManager.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> login2([Bind("Email,Password")] loginInfor loginInfor)
+        public async Task<IActionResult> login2([Bind("Email,Password")] loginInfor loginInfor, string redirectUrl)
         {
             var existlogin = _context.Account.SingleOrDefault(ac => ac.Email == loginInfor.Email);
             if (existlogin == null)
@@ -48,7 +48,7 @@ namespace StudentManager.Controllers
                     return new JsonResult("Thông Tin Đăng Nhập Không Chính xác");
                 }
                 HttpContext.Session.SetString("currentLogin", existlogin.Email);
-                return Redirect("/Home");
+                return Redirect(redirectUrl);
             }
             else
             {
@@ -56,6 +56,13 @@ namespace StudentManager.Controllers
             }
             return new JsonResult("aa");
 
+        }
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("currentLogin");
+           
+            return Redirect("/Home/Index");
         }
 
     }

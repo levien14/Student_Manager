@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +15,18 @@ namespace StudentManager.Controllers
     public class GradesController : Controller
     {
         private readonly StudentManagerContext _context;
+        public bool checkSession()
+        {
+            var ck = false;
+            string currentLogin = HttpContext.Session.GetString("currentLogin");
 
+            if (currentLogin != null)
+            {
+                ck = true;
+            }
+
+            return (ck);
+        }
         public GradesController(StudentManagerContext context)
         {
             _context = context;
@@ -21,6 +35,10 @@ namespace StudentManager.Controllers
         // GET: Grades
         public async Task<IActionResult> Index()
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             return View(await _context.Grade
                 .Include(sg => sg.SubjectGrades)
                 .ThenInclude(sg => sg.Subject)
@@ -34,6 +52,10 @@ namespace StudentManager.Controllers
         // GET: Grades/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             if (id == null)
             {
                 return NotFound();
@@ -59,6 +81,10 @@ namespace StudentManager.Controllers
         // GET: Grades/Create
         public IActionResult Create()
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             return View();
         }
 
@@ -81,6 +107,10 @@ namespace StudentManager.Controllers
         // GET: Grades/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             if (id == null)
             {
                 return NotFound();
@@ -132,6 +162,10 @@ namespace StudentManager.Controllers
         // GET: Grades/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             if (id == null)
             {
                 return NotFound();
@@ -160,6 +194,10 @@ namespace StudentManager.Controllers
 
         public async Task<IActionResult> AddSubject(int? id)
         {
+            if (checkSession() == false)
+            {
+                return Redirect("/Authentication/login?redirectUrl=" + WebUtility.UrlEncode(Request.GetDisplayUrl()));
+            }
             if (id == null)
             {
                 return NotFound();
