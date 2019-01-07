@@ -21,7 +21,14 @@ namespace StudentManager.Controllers
         // GET: Grades
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Grade.ToListAsync());
+            return View(await _context.Grade
+                .Include(sg => sg.SubjectGrades)
+                .ThenInclude(sg => sg.Subject)
+
+                .Include(gp => gp.GradeStudents)
+                    .ThenInclude(gs => gs.Account)
+                    .ThenInclude(ap => ap.Person)
+                .ToListAsync());
         }
 
         // GET: Grades/Details/5
