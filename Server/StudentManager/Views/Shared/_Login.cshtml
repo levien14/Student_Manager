@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        body {
+            background: #dcdde1;
+        }
+        /* css phần login */
+        .box_login {
+            border-radius: 15px;
+            width: 300px;
+            height: 250px;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            padding: 40px;
+            transform: translate(-50%, -50%);
+            background: #f5f6fa;
+            text-align: center;
+            border: 1px solid #7f8c8d;
+        }
+
+            .box_login h2 {
+                text-transform: uppercase;
+            }
+
+            .box_login input[type = 'text'], .box_login input[type = 'password'] {
+                background: none;
+                margin: 10px auto;
+                text-align: center;
+                border: 1px solid #40739e;
+                border-radius: 24px;
+                outline: none;
+                padding: 14px 10px;
+                width: 270px;
+            }
+
+                .box_login input[type = 'text']:focus, .box_login input[type = 'password']:focus {
+                    border-color: #3498db;
+                }
+
+            .box_login input[type = 'submit'] {
+                border: 0px;
+                margin: 20px auto;
+                text-align: center;
+                background: #3498db;
+                border-radius: 24px;
+                padding: 14px 40px;
+                color: white;
+                text-transform: uppercase;
+            }
+    </style>
+</head>
+<body>
+    @RenderBody()
+</body>
+
+
