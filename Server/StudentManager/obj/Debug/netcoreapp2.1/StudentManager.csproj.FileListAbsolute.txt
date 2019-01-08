@@ -151,3 +151,4 @@ C:\Users\Admin\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreap
 C:\Users\Admin\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreapp2.1\StudentManager.pdb
 C:\Users\Admin\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreapp2.1\StudentManager.csproj.CopyComplete
 C:\Users\Admin\Desktop\Student_Manager\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Login.g.cshtml.cs
+C:\Users\Hp\Desktop\ASMEAP\Server\StudentManager\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Login.g.cshtml.cs

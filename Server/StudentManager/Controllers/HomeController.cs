@@ -14,12 +14,13 @@ namespace StudentManager.Controllers
          
         public IActionResult Index()
         {
+            ViewData["Login"] = HttpContext.Session.GetString("currentLogin");
             return View();
         }
 
         public IActionResult About()
         {
-            ViewData["Login"] = HttpContext.Session.GetString("currentLogin");
+           
             ViewData["Message"] = "Your application description page.";
             
             return View();

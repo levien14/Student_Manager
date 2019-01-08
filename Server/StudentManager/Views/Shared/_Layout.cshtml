@@ -34,7 +34,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>*@
                     <li><a asp-area="" asp-controller="Accounts" asp-action="index">Account</a></li>
                     <li><a asp-area="" asp-controller="Grades" asp-action="index">Greade</a></li>
                     <li><a asp-area="" asp-controller="Subjects" asp-action="index">Subject</a></li>
@@ -42,14 +42,16 @@
                 </ul>
                 <ul class="nav navbar-nav" style="float:right">
 
-                    @if (checkSession == null)
+                    @if (Context.Session.GetString("currentLogin") == null)
                     {
-                        <li><a asp-area="" asp-controller="Authentication" asp-action="login" class=" glyphicon glyphicon-log-in">Login</a></li>
+                        <li><a asp-area="" asp-controller="Authentication" asp-action="login">Login</a></li>
+
                     }
                     else
                     {
-                     <li> <a asp-area="" asp-controller="Authentication" asp-action="logout" class=" glyphicon glyphicon-log-in">@Context.Session.GetString("currentLogin") | LogOut</a></li>
-                    }
+                        @*class= " glyphicon glyphicon-log-in"*@
+                <li> <a asp-area="" asp-controller="Authentication" asp-action="logout">@Context.Session.GetString("currentLogin") | LogOut</a></li>
+            }
                 </ul>
             </div>
         </div>
