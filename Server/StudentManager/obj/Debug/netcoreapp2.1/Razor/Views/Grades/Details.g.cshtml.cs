@@ -274,7 +274,7 @@ using StudentManager.Models;
             WriteLiteral("                    </tbody>\r\n                </table>\r\n                ");
             EndContext();
             BeginContext(2850, 78, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915fd98d43a443babd8d8d165f882425", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53a14e87872c46748f8663b4ed045dc3", async() => {
                 BeginContext(2920, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -310,7 +310,7 @@ using StudentManager.Models;
             WriteLiteral("\r\n                ");
             EndContext();
             BeginContext(2946, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53c9c66cd9894c3f997d23a4ab1576c4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e400fdbe9e804c79ab361d2d4b698a4b", async() => {
                 BeginContext(2991, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();

@@ -76,7 +76,7 @@ namespace StudentManager
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}");
             });
         }
         public static void HandleMapcheckToken(IApplicationBuilder app)

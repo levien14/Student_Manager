@@ -82,7 +82,7 @@ using ReflectionIT.Mvc.Paging;
             WriteLiteral("\r\n<h2>Index</h2>\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(222, 106, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b296fc5babfc4b89a6878a1e07f830bd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "162f8045296847a8b49115be61789c1f", async() => {
                 BeginContext(284, 40, true);
                 WriteLiteral("<i class=\"glyphicon glyphicon-plus\"></i>");
                 EndContext();
@@ -106,7 +106,7 @@ using ReflectionIT.Mvc.Paging;
             WriteLiteral("    \r\n</p>\r\n\r\n<table class=\"table table-bordered\">\r\n\r\n\r\n");
             EndContext();
             BeginContext(384, 315, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b0ff8e86d4f0424ebc779dcbb61ab8b3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a0ecea332ce34009abe44321540ca702", async() => {
                 BeginContext(423, 68, true);
                 WriteLiteral("\r\n    <input name=\"filter\" class=\"form-control\" placeholder=\"filter\"");
                 EndContext();
@@ -209,7 +209,7 @@ WriteAttributeValue("", 511, Model.RouteValue["Filter"], 511, 27, false);
             WriteLiteral("\r\n            </td>\r\n            \r\n            <td>\r\n                ");
             EndContext();
             BeginContext(1544, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5fc6725fadb642d3aaa038af0c71b2f9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d188fc21cad4c4da2def72cc94f3207", async() => {
                 BeginContext(1589, 42, true);
                 WriteLiteral("<i class=\"glyphicon glyphicon-pencil\"></i>");
                 EndContext();
@@ -244,7 +244,7 @@ WriteAttributeValue("", 511, Model.RouteValue["Filter"], 511, 27, false);
             WriteLiteral("&nbsp;\r\n                ");
             EndContext();
             BeginContext(1659, 96, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "984764745cc6492eba9e41d1fabf4156", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "611b53c0471440edb009040b417f08a6", async() => {
                 BeginContext(1707, 44, true);
                 WriteLiteral("<i class=\"glyphicon glyphicon-list-alt\"></i>");
                 EndContext();
@@ -279,7 +279,7 @@ WriteAttributeValue("", 511, Model.RouteValue["Filter"], 511, 27, false);
             WriteLiteral("&nbsp;\r\n                ");
             EndContext();
             BeginContext(1779, 117, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f4d5470529841069bcde7e25c48f482", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e61f11a5bcd84f968e0ee4bbaec93cfd", async() => {
                 BeginContext(1851, 41, true);
                 WriteLiteral("<i class=\"glyphicon glyphicon-trash\"></i>");
                 EndContext();
@@ -323,7 +323,7 @@ WriteAttributeValue("", 511, Model.RouteValue["Filter"], 511, 27, false);
             WriteLiteral("    </tbody>\r\n</table>\r\n<nav aria-label=\"Suppliers navigation example\">\r\n    ");
             EndContext();
             BeginContext(2968, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:pager", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d73e80db005c42729e1aec946c5ab315", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("vc:pager", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9a40eb4a51d746528d71d0ece709ea3f", async() => {
             }
             );
             __PagerViewComponentTagHelper = CreateTagHelper<global::AspNetCore.Views_Accounts_Index.__Generated__PagerViewComponentTagHelper>();
