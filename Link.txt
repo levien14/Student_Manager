@@ -1,0 +1,4 @@
+Link Login : https://studentmanager20190107033227.azurewebsites.net/api/student/login (POST)
+Link infor : https://studentmanager20190107033227.azurewebsites.net/api/student/infor  (GHET)
+link Update infor : https://studentmanager20190107033227.azurewebsites.net/api/student/change-information (POST)
+Linh Web : https://studentmanager20190107033227.azurewebsites.net/
