@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +16,7 @@ namespace StudentManager.Controllers
     [ApiController]
     public class InformationController : ControllerBase
     {
+        private MD5 _algorithm = MD5.Create();
         private readonly StudentManagerContext _context;
 
         public InformationController(StudentManagerContext context)
@@ -36,8 +39,13 @@ namespace StudentManager.Controllers
                 return BadRequest(ModelState);
             }
             var existLogin = _context.Account.SingleOrDefault(ac => ac.Email == login.Email);
+            
             if (existLogin != null)
             {
+                var salt = existLogin.Salt;
+                login.Password += salt;
+                var hash = _algorithm.ComputeHash(Encoding.UTF8.GetBytes(login.Password));
+                login.Password = Convert.ToBase64String(hash);
                 if (login.Password == existLogin.Password)
                 {
 

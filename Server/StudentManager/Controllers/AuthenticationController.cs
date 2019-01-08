@@ -48,6 +48,10 @@ namespace StudentManager.Controllers
                     return new JsonResult("Thông Tin Đăng Nhập Không Chính xác");
                 }
                 HttpContext.Session.SetString("currentLogin", existlogin.Email);
+                if(redirectUrl == null)
+                {
+                    return Redirect("/Home");
+                }
                 return Redirect(redirectUrl);
             }
             else
@@ -62,7 +66,7 @@ namespace StudentManager.Controllers
         {
             HttpContext.Session.Remove("currentLogin");
            
-            return Redirect("/Home/Index");
+            return Redirect("/Home");
         }
 
     }
