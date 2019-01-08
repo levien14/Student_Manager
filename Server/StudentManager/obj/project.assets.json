@@ -12249,23 +12249,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hp\\.nuget\\packages\\": {},
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hp\\Desktop\\ASMEAP\\Server\\StudentManager\\StudentManager.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Student_Manager\\Server\\StudentManager\\StudentManager.csproj",
       "projectName": "StudentManager",
-      "projectPath": "C:\\Users\\Hp\\Desktop\\ASMEAP\\Server\\StudentManager\\StudentManager.csproj",
-      "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hp\\Desktop\\ASMEAP\\Server\\StudentManager\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\Student_Manager\\Server\\StudentManager\\StudentManager.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\Student_Manager\\Server\\StudentManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
